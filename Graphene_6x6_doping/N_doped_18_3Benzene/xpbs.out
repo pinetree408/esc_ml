@@ -1,0 +1,13 @@
+cp: cannot stat `/home/class/GB/151124_graphene_6x6_doping/N_doped_18_3Benzene/*.DM': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1206_135329/*.xyz': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1206_135329/*.DOS': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1206_135329/*.PDOS': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1206_135329/*.LDOS': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1206_135329/*.RHO': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1206_135329/*.VH': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1206_135329/*.bands': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1206_135329/*.WFSX': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1206_135329/*.HSX': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1206_135329/*.TSHS': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1206_135329/*.AVTRANS': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1206_135329/*.ANI': No such file or directory

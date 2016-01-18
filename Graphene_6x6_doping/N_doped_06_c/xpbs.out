@@ -1,0 +1,21 @@
+mkdir: cannot create directory `/scratch/works/class': Permission denied
+cp: target `/scratch/works/class/siesta_1211_004714/' is not a directory
+cp: target `/scratch/works/class/siesta_1211_004714/' is not a directory
+cp: cannot create regular file `/scratch/works/class/siesta_1211_004714/': No such file or directory
+/PBS/mom_priv/jobs/78131.master.hpc.SC: line 74: cd: /scratch/works/class/siesta_1211_004714: No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1211_004714/stdout.txt': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1211_004714/*.xyz': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1211_004714/*.EIG': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1211_004714/*.DM': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1211_004714/*.DOS': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1211_004714/*.PDOS': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1211_004714/*.LDOS': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1211_004714/*.XV': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1211_004714/*.RHO': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1211_004714/*.VH': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1211_004714/*.bands': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1211_004714/*.WFSX': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1211_004714/*.HSX': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1211_004714/*.TSHS': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1211_004714/*.AVTRANS': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1211_004714/*.ANI': No such file or directory

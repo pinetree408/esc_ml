@@ -1,0 +1,16 @@
+ERROR STOP from Node:    0
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+cp: cannot stat `/scratch/works/class/siesta_1126_234406/*.xyz': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1126_234406/*.EIG': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1126_234406/*.DOS': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1126_234406/*.PDOS': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1126_234406/*.LDOS': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1126_234406/*.XV': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1126_234406/*.RHO': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1126_234406/*.VH': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1126_234406/*.bands': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1126_234406/*.WFSX': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1126_234406/*.HSX': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1126_234406/*.TSHS': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1126_234406/*.AVTRANS': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1126_234406/*.ANI': No such file or directory

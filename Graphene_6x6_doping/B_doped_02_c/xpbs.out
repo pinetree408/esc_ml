@@ -1,0 +1,11 @@
+cp: cannot stat `/scratch/works/class/siesta_1208_142852/*.xyz': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1208_142852/*.DOS': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1208_142852/*.PDOS': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1208_142852/*.LDOS': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1208_142852/*.RHO': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1208_142852/*.VH': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1208_142852/*.WFSX': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1208_142852/*.HSX': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1208_142852/*.TSHS': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1208_142852/*.AVTRANS': No such file or directory
+cp: cannot stat `/scratch/works/class/siesta_1208_142852/*.ANI': No such file or directory

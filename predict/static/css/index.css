@@ -1,0 +1,23 @@
+.Atom-box {
+  width: 550px;
+  height: 550px;
+  -webkit-transform: skew(20deg);
+  -moz-transform: skew(20deg);
+  -o-transform: skew(20deg);
+  border-style: solid;
+  margin: auto;
+}
+
+.Atom-circle {
+  width: 20%;
+  height: 20%;
+  background: red;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transform: skew(-20deg);
+  -moz-transform: skew(-20deg);
+  -o-transform: skew(-20deg);
+  position: relative;
+  float: left;
+}

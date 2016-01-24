@@ -1,1 +1,35 @@
-test
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/css/index.css">
+  </head>
+  <body>
+    <div class="Atom-box">
+      {% for i in atomRange %}
+        <div class="Atom-circle"
+          onclick="ChangeAtom({{i}})"
+          id="{{i}}">
+        </div>
+      {% endfor %}
+    </div>
+    <script type="text/javascript">
+      var changedAtomList = [];
+      function ChangeAtom(i) {
+        var elem = document.getElementById(i);
+        var background = getComputedStyle(elem).getPropertyValue("background-color");
+        var nextBackground = null;
+        if (background === 'rgb(255, 0, 0)') {
+          nextBackground = 'yellow';
+          changedAtomList.push(i);
+        } else {
+          nextBackground = 'red';
+          var index = changedAtomList.indexOf(i);
+          if (index > -1) {
+            changedAtomList.splice(index, 1);
+          }
+        }
+        document.getElementById(i).style.background = nextBackground;
+        console.log(changedAtomList);
+      }
+    </script>
+  </body>
+</html>

@@ -11,6 +11,14 @@
         </div>
       {% endfor %}
     </div>
+    <form method="POST" action="/ml/">
+      {% csrf_token %}
+      {% for field in form %}
+        {{ field }}
+      {% endfor %}
+      <button type="submit">Submit</button>
+    </form>
+    {{result}}
     <script type="text/javascript">
       var changedAtomList = [];
       function ChangeAtom(i) {
@@ -28,6 +36,7 @@
           }
         }
         document.getElementById(i).style.background = nextBackground;
+        document.getElementById('id_atomList').value = changedAtomList;
         console.log(changedAtomList);
       }
     </script>

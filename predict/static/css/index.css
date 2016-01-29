@@ -1,16 +1,37 @@
-.Atom-box {
+.Atom-container {
   width: 550px;
   height: 550px;
   -webkit-transform: skew(20deg);
   -moz-transform: skew(20deg);
   -o-transform: skew(20deg);
-  border-style: solid;
   margin: auto;
 }
 
-.Atom-circle {
-  width: 8.33%;
-  height: 8.33%;
+.Atom-box {
+  width: 15.57%;
+  height: 15.57%;
+  border-style: solid;
+  position: relative;
+  float: left;
+}
+
+.Atom-circle-0 {
+  width: 40%;
+  height: 40%;
+  background: red;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transform: skew(-20deg);
+  -moz-transform: skew(-20deg);
+  -o-transform: skew(-20deg);
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.Atom-circle-1 {
+  width: 40%;
+  height: 40%;
   background: red;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -19,5 +40,7 @@
   -moz-transform: skew(-20deg);
   -o-transform: skew(-20deg);
   position: relative;
-  float: left;
+  float: right;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }

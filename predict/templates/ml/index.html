@@ -3,11 +3,15 @@
     <link rel="stylesheet" href="/static/css/index.css">
   </head>
   <body>
-    <div class="Atom-box">
+    <div class="Atom-container">
       {% for i in atomRange %}
-        <div class="Atom-circle"
-          onclick="ChangeAtom({{i}})"
-          id="{{i}}">
+        <div class="Atom-box">
+	  {% for j in atomNum %}
+	    <div class="Atom-circle-{{j}}"
+              onclick="ChangeAtom({{i}}, {{j}})"
+	      id="{{i}},{{j}}">
+            </div>
+          {% endfor %}
         </div>
       {% endfor %}
     </div>
@@ -21,8 +25,10 @@
     <div id="curve_chart" style="width: 900px; height: 500px"></div>
     <script type="text/javascript">
       var changedAtomList = [];
-      function ChangeAtom(i) {
-        var elem = document.getElementById(i);
+      function ChangeAtom(a, b) {
+	var i = a*2 + b;
+        var temp = a + ',' + b;
+        var elem = document.getElementById(temp);
         var background = getComputedStyle(elem).getPropertyValue("background-color");
         var nextBackground = null;
         if (background === 'rgb(255, 0, 0)') {
@@ -35,7 +41,7 @@
             changedAtomList.splice(index, 1);
           }
         }
-        document.getElementById(i).style.background = nextBackground;
+        document.getElementById(temp).style.background = nextBackground;
         document.getElementById('id_atomList').value = changedAtomList;
         console.log(changedAtomList);
       }
@@ -51,7 +57,7 @@
         result.splice(0, 0, ['x','y']);
         var data = google.visualization.arrayToDataTable(result);
         var options = {
-          title: 'Company Performance',
+          title: 'DOS',
           curveType: 'function',
           legend: { position: 'bottom' }
         };

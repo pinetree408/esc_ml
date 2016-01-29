@@ -9,7 +9,8 @@ class IndexView(TemplateView):
 
     def get_context_data(self,  **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
-        context['atomRange'] = range(0, 72)
+        context['atomRange'] = range(0, 36)
+	context['atomNum'] = range(0,2)
         context['form'] = self.form_class
 
         return context
@@ -17,7 +18,8 @@ class IndexView(TemplateView):
     def post(self, request, *args, **kwargs):
 	form = self.form_class(request.POST)
         context = {}
-	context['atomRange'] = range(0, 72)
+	context['atomRange'] = range(0, 36)
+	context['atomNum'] = range(0,2)
         context['form'] = self.form_class
 
         if form.is_valid():

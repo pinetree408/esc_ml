@@ -23,7 +23,8 @@ class IndexView(TemplateView):
         context['form'] = self.form_class
 
         if form.is_valid():
-            predicted_data = predict.predict()
+            atom_category = form.cleaned_data['atomCategory']
+            predicted_data = predict.predict(atom_category)
             result_y = []
             start = -10.0
             while start <= 10.0:
@@ -33,7 +34,8 @@ class IndexView(TemplateView):
             for i in range(len(result_y)):
                 temp = []
                 temp.append(result_y[i])
-                temp.append(predicted_data[i])
+                temp.append(predicted_data[0][i])
+		temp.append(predicted_data[1][i])
                 final_result.append(temp)
             context['result'] = final_result
         return render(request, self.template_name, context)

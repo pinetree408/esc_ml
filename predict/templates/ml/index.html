@@ -29,13 +29,14 @@
 	var i = a*2 + b;
         var temp = a + ',' + b;
         var elem = document.getElementById(temp);
-        var background = getComputedStyle(elem).getPropertyValue("background-color");
+	var background = getComputedStyle(elem).getPropertyValue("background-color");
+	console.log(background);
         var nextBackground = null;
-        if (background === 'rgb(255, 0, 0)') {
-          nextBackground = 'yellow';
+        if (background === 'rgb(128, 128, 128)') {
+          nextBackground = 'blue';
           changedAtomList.push(i);
         } else {
-          nextBackground = 'red';
+          nextBackground = 'gray';
           var index = changedAtomList.indexOf(i);
           if (index > -1) {
             changedAtomList.splice(index, 1);
@@ -48,18 +49,24 @@
     </script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
+      google.charts.load('44', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
         var result = [];
         result = {{result}};
-        result.splice(0, 0, ['x','y']);
+        result.splice(0, 0, ['x','predicted', 'expected']);
         var data = google.visualization.arrayToDataTable(result);
         var options = {
           title: 'DOS',
           curveType: 'function',
-          legend: { position: 'bottom' }
+	  legend: { position: 'bottom' },
+	  hAxis: {
+            title: 'Energy [eV]'
+	  },
+          vAxis: {
+            title: 'DOS [1/eV]'
+          }
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));

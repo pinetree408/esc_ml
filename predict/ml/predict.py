@@ -4,9 +4,9 @@ import os
 import numpy
 
 
-def predict():
+def predict(atom_category):
     # Initialize Data set path
-    path = "../Graphene_6x6_doping"
+    path = "../Graphene_6x6_doping/" + atom_category
 
     # Initialize default value
     data_set = []
@@ -74,6 +74,5 @@ def predict():
     for i in range(len(expected_data)):
         difference = [item for item in expected_data[i] if item not in predicted_data[i]]
         precent = len(difference) * 1.0 / len(expected_data[i]) * 100
-        print precent
     
-    return predicted_data[0]
+    return [predicted_data[0], expected_data[0]]

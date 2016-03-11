@@ -4,18 +4,20 @@ import os
 import numpy
 
 
-def predict(atom_category):
+def predict(atom_category, input_list):
     # Initialize Data set path
     path = "../Graphene_6x6_doping/" + atom_category
 
     # Initialize default value
     data_set = []
     target_list = []
+    data_set_struct = []
 
     # Parse Data
     for i in os.listdir(path):
         for j in os.listdir(path + '/' + i):
 	    if j == 'DOS':
+
 	        f = open(path+ '/' + i + '/' + j, 'r')
 	        f_lines = f.readlines()
 	        result = []
@@ -28,7 +30,20 @@ def predict(atom_category):
                     result.append(numpy.float64(temp[1]))
 	        f.close()
 	        data_set.append(result)
-		f_sturct = open(path + '/' + i +'/STRUCT.fdf', 'r')
+
+		f_struct = open(path + '/' + i +'/STRUCT.fdf', 'r')
+		f_struct_lines = f_struct.readlines()
+                struct_result = []
+		for line in f_struct_lines[19:91]:
+                    line_block = line.split('\n')[0].split(' ')
+		    while True:
+		        try:
+			    line_block.remove('')
+			except:
+		            break
+		    struct_result.append(line_block[len(line_block)-2])
+		f_struct.close()
+		data_set_struct.append(struct_result)
                 target_list.append(i)
 
     n_samples = len(target_list)
@@ -75,4 +90,22 @@ def predict(atom_category):
         difference = [item for item in expected_data[i] if item not in predicted_data[i]]
         precent = len(difference) * 1.0 / len(expected_data[i]) * 100
     
-    return [predicted_data[0], expected_data[0]]
+    c_list = []
+    for i in range(72):
+        c_list.append('2')
+    temp = input_list.split(',')
+    for item in temp:
+        c_list[int(item)-1] = '1'
+
+    index = -1
+    for i in range(len(data_set_struct)):
+	if data_set_struct[i] == c_list:
+            index = i
+
+    expected_list = []
+    if index != -1:
+        expected_list = expected_data[index]
+    else:
+	for i in range(len(predicted_data[0])):
+            expected_list.append(0.0)
+    return [predicted_data[0], expected_list]

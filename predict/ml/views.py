@@ -24,7 +24,8 @@ class IndexView(TemplateView):
 
         if form.is_valid():
             atom_category = form.cleaned_data['atomCategory']
-            predicted_data = predict.predict(atom_category)
+	    atom_list = form.cleaned_data['atomList']
+            predicted_data = predict.predict(atom_category,atom_list)
             result_y = []
             start = -10.0
             while start <= 10.0:

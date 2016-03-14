@@ -95,7 +95,7 @@ def predict(atom_category, input_list):
         c_list.append('2')
     temp = input_list.split(',')
     for item in temp:
-        c_list[int(item)-1] = '1'
+        c_list[int(item)] = '1'
 
     index = -1
     for i in range(len(data_set_struct)):
@@ -104,8 +104,13 @@ def predict(atom_category, input_list):
 
     expected_list = []
     if index != -1:
-        expected_list = expected_data[index]
+	if len(expected_data) > index:
+            expected_list = expected_data[index]
+	else:
+	    for i in range(len(predicted_data[0])):
+                expected_list.append(0.0)
     else:
 	for i in range(len(predicted_data[0])):
             expected_list.append(0.0)
+
     return [predicted_data[0], expected_list]

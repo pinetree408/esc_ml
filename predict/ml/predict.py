@@ -113,10 +113,10 @@ def predict(atom_category, input_list):
         if len(expected_data) > index:
             expected_list = expected_data[index]
         else:
-            for i in range(len(predicted_data[0])):
+            for i in range(len(predicted_data[index])):
                 expected_list.append(0.0)
     else:
-        for i in range(len(predicted_data[0])):
+        for i in range(len(predicted_data[index])):
             expected_list.append(0.0)
 
-    return [predicted_data[0], expected_list]
+    return [predicted_data[index], expected_list]

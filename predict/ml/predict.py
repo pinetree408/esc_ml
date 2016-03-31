@@ -16,36 +16,36 @@ def predict(atom_category, input_list):
     # Parse Data
     for i in os.listdir(path):
         for j in os.listdir(path + '/' + i):
-	    if j == 'DOS':
+            if j == 'DOS':
 
                 # Parse DOS data
-	        f = open(path+ '/' + i + '/' + j, 'r')
-	        f_lines = f.readlines()
-	        result = []
-	        for line in f_lines[11:]:
+                f = open(path+'/'+i+'/'+j, 'r')
+                f_lines = f.readlines()
+                result = []
+                for line in f_lines[11:]:
                     data = line.split('\n')[0].split(' ')
-		    temp = []
-		    for k in data:
+                    temp = []
+                    for k in data:
                         if k != '':
                             temp.append(k)
                     result.append(numpy.float64(temp[1]))
-	        f.close()
-	        data_set.append(result)
+                f.close()
+                data_set.append(result)
 
                 # Parse Struct data
-		f_struct = open(path + '/' + i +'/STRUCT.fdf', 'r')
-		f_struct_lines = f_struct.readlines()
+                f_struct = open(path+'/'+i+'/STRUCT.fdf', 'r')
+                f_struct_lines = f_struct.readlines()
                 struct_result = []
-		for line in f_struct_lines[19:91]:
+                for line in f_struct_lines[19:91]:
                     line_block = line.split('\n')[0].split(' ')
-		    while True:
-		        try:
-			    line_block.remove('')
-			except:
-		            break
-		    struct_result.append(line_block[len(line_block)-2])
-		f_struct.close()
-		data_set_struct.append(struct_result)
+                    while True:
+                        try:
+                            line_block.remove('')
+                        except:
+                            break
+                    struct_result.append(line_block[len(line_block)-2])
+                f_struct.close()
+                data_set_struct.append(struct_result)
 
                 # Add target_list
                 target_list.append(i)
@@ -104,19 +104,19 @@ def predict(atom_category, input_list):
 
     index = -1
     for i in range(len(data_set_struct)):
-	if data_set_struct[i] == c_list:
+        if data_set_struct[i] == c_list:
             index = i
 
     # Find input list in shuffled list
     expected_list = []
     if index != -1:
-	if len(expected_data) > index:
+        if len(expected_data) > index:
             expected_list = expected_data[index]
-	else:
-	    for i in range(len(predicted_data[0])):
+        else:
+            for i in range(len(predicted_data[0])):
                 expected_list.append(0.0)
     else:
-	for i in range(len(predicted_data[0])):
+        for i in range(len(predicted_data[0])):
             expected_list.append(0.0)
 
     return [predicted_data[0], expected_list]

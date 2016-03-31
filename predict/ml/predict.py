@@ -18,6 +18,7 @@ def predict(atom_category, input_list):
         for j in os.listdir(path + '/' + i):
 	    if j == 'DOS':
 
+                # Parse DOS data
 	        f = open(path+ '/' + i + '/' + j, 'r')
 	        f_lines = f.readlines()
 	        result = []
@@ -31,6 +32,7 @@ def predict(atom_category, input_list):
 	        f.close()
 	        data_set.append(result)
 
+                # Parse Struct data
 		f_struct = open(path + '/' + i +'/STRUCT.fdf', 'r')
 		f_struct_lines = f_struct.readlines()
                 struct_result = []
@@ -44,6 +46,8 @@ def predict(atom_category, input_list):
 		    struct_result.append(line_block[len(line_block)-2])
 		f_struct.close()
 		data_set_struct.append(struct_result)
+
+                # Add target_list
                 target_list.append(i)
 
     n_samples = len(target_list)
@@ -89,7 +93,8 @@ def predict(atom_category, input_list):
     for i in range(len(expected_data)):
         difference = [item for item in expected_data[i] if item not in predicted_data[i]]
         precent = len(difference) * 1.0 / len(expected_data[i]) * 100
-    
+
+    # Set input list
     c_list = []
     for i in range(72):
         c_list.append('2')
@@ -102,6 +107,7 @@ def predict(atom_category, input_list):
 	if data_set_struct[i] == c_list:
             index = i
 
+    # Find input list in shuffled list
     expected_list = []
     if index != -1:
 	if len(expected_data) > index:

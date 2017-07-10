@@ -1,4 +1,5 @@
-## ml
+## esc ml
+### Application of the machine learning algorithm to electronic structure calculator
 ### stack
 - scikit-leran
 - django

@@ -1,4 +1,4 @@
-Django==1.8
+Django==2.2.24
 numpy==1.10.2
 pep8==1.7.0
 scikit-learn==0.17
